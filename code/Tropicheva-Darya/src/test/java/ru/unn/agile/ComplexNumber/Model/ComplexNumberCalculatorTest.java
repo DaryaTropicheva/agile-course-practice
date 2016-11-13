@@ -66,7 +66,7 @@ public class ComplexNumberCalculatorTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCanThrowExceptiononNullArgument() {
+    public void testCanThrowExceptionOnNullArgument() {
         ComplexNumber complexNumberA = new ComplexNumber(2, 1);
         CalculatorComplexNumber.div(complexNumberA, null);
     }
