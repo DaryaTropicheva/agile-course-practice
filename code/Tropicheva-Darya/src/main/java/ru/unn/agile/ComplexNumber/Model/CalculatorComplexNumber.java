@@ -8,22 +8,22 @@ public final class CalculatorComplexNumber {
     }
 
     public static ComplexNumber add(final ComplexNumber complexA, final ComplexNumber complexB) {
-        checkNonNullnumber(complexA);
-        checkNonNullnumber(complexB);
+        checkNonNullNumber(complexA);
+        checkNonNullNumber(complexB);
         return new ComplexNumber(complexA.getReal() + complexB.getReal(),
                 complexA.getImaginary() + complexB.getImaginary());
     }
 
     public static ComplexNumber sub(final ComplexNumber complexA, final ComplexNumber complexB) {
-        checkNonNullnumber(complexA);
-        checkNonNullnumber(complexB);
+        checkNonNullNumber(complexA);
+        checkNonNullNumber(complexB);
         return new ComplexNumber(complexA.getReal() - complexB.getReal(),
                 complexA.getImaginary() - complexB.getImaginary());
     }
 
     public static ComplexNumber mult(final ComplexNumber complexA, final ComplexNumber complexB) {
-        checkNonNullnumber(complexA);
-        checkNonNullnumber(complexB);
+        checkNonNullNumber(complexA);
+        checkNonNullNumber(complexB);
         float real = complexA.getReal() * complexB.getReal()
                 - complexA.getImaginary() * complexB.getImaginary();
         float im = complexA.getReal() * complexB.getImaginary()
@@ -38,15 +38,15 @@ public final class CalculatorComplexNumber {
         }
     }
 
-    private static void checkNonNullnumber(final ComplexNumber complexNumber) {
+    private static void checkNonNullNumber(final ComplexNumber complexNumber) {
         if (complexNumber == null) {
             throw new IllegalArgumentException("Parameter can't be null");
         }
     }
 
     public static ComplexNumber div(final ComplexNumber complexA, final ComplexNumber complexB) {
-        checkNonNullnumber(complexA);
-        checkNonNullnumber(complexB);
+        checkNonNullNumber(complexA);
+        checkNonNullNumber(complexB);
         checkNonZeroNumber(complexB);
         float factor = complexB.getReal() * complexB.getReal()
                 + complexB.getImaginary() * complexB.getImaginary();
@@ -56,12 +56,12 @@ public final class CalculatorComplexNumber {
     }
 
     public static float abs(final ComplexNumber complexNumber) {
-        checkNonNullnumber(complexNumber);
+        checkNonNullNumber(complexNumber);
         return (float) Math.hypot(complexNumber.getReal(), complexNumber.getImaginary());
     }
 
     public static double getArgument(final ComplexNumber complexNumber) {
-        checkNonNullnumber(complexNumber);
+        checkNonNullNumber(complexNumber);
         return Math.atan2((double) complexNumber.getImaginary(), (double) complexNumber.getReal());
     }
 }
